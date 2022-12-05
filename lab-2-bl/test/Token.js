@@ -57,4 +57,18 @@ describe("TheSecondLab.sol", () => {
             expect(bobBalance).to.equal(transferAmount);
         });
     });
+    
+    // Тесты
+    describe("TheStruct", function() {
+
+        it("Test of creat Structure", async function() {
+            await contract.createStruct(owner.address, true, BigNumber.from(1), alice.address, 1234);
+
+            let x = await contract.getTheStruct(owner.address);
+
+            expect(x.home).to.equal(owner.address)
+        });
+
+    });
+    
 });
